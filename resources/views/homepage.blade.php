@@ -32,17 +32,17 @@
         <p class="text-gray-400 leading-relaxed mb-6 text-center">Check out our latest blog posts below!</p>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+            <div class="bg-gray-700 p-6 rounded-lg shadow-xl transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl">
                 <h3 class="text-2xl font-semibold mb-2">Blog Post One</h3>
                 <p class="text-gray-300 mb-4">A brief summary of the first blog post. Learn more about this topic!</p>
                 <a href="{{ route('blogs.show', ['blog' => 1]) }}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Read More</a>
             </div>
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+            <div class="bg-gray-700 p-6 rounded-lg shadow-xl transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl">
                 <h3 class="text-2xl font-semibold mb-2">Blog Post Two</h3>
                 <p class="text-gray-300 mb-4">A brief summary of the second blog post. Explore the insights shared!</p>
                 <a href="{{ route('blogs.show', ['blog' => 2]) }}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Read More</a>
             </div>
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:scale-105">
+            <div class="bg-gray-700 p-6 rounded-lg shadow-xl transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl">
                 <h3 class="text-2xl font-semibold mb-2">Blog Post Three</h3>
                 <p class="text-gray-300 mb-4">A brief summary of the third blog post. Dive into the details!</p>
                 <a href="{{ route('blogs.show', ['blog' => 3]) }}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Read More</a>
