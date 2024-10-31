@@ -50,7 +50,7 @@
         </div>
 
         <div class="text-center mt-6">
-            <a href="{{ route('blogs.index') }}" class="inline-block bg -blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition duration-300">View All Blogs</a>
+            <a href="{{ route('blogs.index') }}" class="inline-block bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition duration-300">View All Blogs</a>
         </div>
 
     </main>
