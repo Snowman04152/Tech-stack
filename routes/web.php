@@ -11,12 +11,12 @@ Route::get('/', [PageController::class, 'homepage'])->name('homepage');
 
 // Define the login route
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
+Route::post('/authenticate', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Profile routes
-Route::get ('/profile', function () {
-    return view('profile'); 
+Route::get('/profile', function () {
+    return view('profile');
 })->name('profile');
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('edit.profile');

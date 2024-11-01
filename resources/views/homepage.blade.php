@@ -16,6 +16,7 @@
             <h1 class="text-4xl font-extrabold">Blogs Website</h1>
             <p class="text-lg">Discover a wealth of knowledge through our diverse range of blog posts</p>
         </div>
+        @auth
         <div class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fas fa-user"></i> 
@@ -25,6 +26,12 @@
                 <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
             </ul>
         </div>
+        @else
+        <a class="btn btn-primary" type="button" id="profileDropdown" href="{{ route('login') }}"  aria-expanded="false">
+            Login
+        </a>
+        @endauth
+
     </header>
     
     <main class="flex-grow max-w-5xl mx-auto p-6 bg-gray-800 rounded-lg shadow-lg mt-6">
