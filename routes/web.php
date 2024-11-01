@@ -1,4 +1,5 @@
 <?php
+use Filament\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AuthController;
@@ -8,12 +9,14 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [PageController::class, 'homepage'])->name('homepage');
-
+// Grouping the authentication routes
+Route::name('auth.')
+    ->group(function () {
+        Route::post('/logout', \Filament\Http\Controllers\Auth\LogoutController::class)->name('logout');
+    });
 // Define the login route
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-
 // Profile routes
 Route::get ('/profile', function () {
     return view('profile'); 
@@ -21,7 +24,6 @@ Route::get ('/profile', function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('edit.profile');
     Route::post('/profile/update', [ProfileController::class, 'update'])->name('update.profile');
-    Route::post('/logout', [ProfileController::class, 'logout'])->name('logout');
 });
 // Blog routes
 Route::prefix('blogs')->group(function () {

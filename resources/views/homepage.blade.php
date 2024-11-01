@@ -21,9 +21,13 @@
                 <i class="fas fa-user"></i> 
             </button>
             <ul class="dropdown-menu" aria-labelledby="profileDropdown">
-                <li><a class="dropdown-item" href="{{ route('profile') }}">View Profile</a></li>
-                <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
-            </ul>
+                <li><a class="dropdown-item" href="{{ url('/admin') }}">View Admin Panel</a></li>
+                <li>
+                    <form id="logout-form" action="{{ route('auth.logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                    <a class="dropdown-item" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                </li>
         </div>
     </header>
     
