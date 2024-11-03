@@ -12,7 +12,7 @@ Route::get('/', [PageController::class, 'homepage'])->name('homepage');
 // Grouping the authentication routes
 Route::name('auth.')
     ->group(function () {
-        Route::post('/logout', \Filament\Http\Controllers\Auth\LogoutController::class)->name('logout');
+        Route::post('/logout', LogoutController::class)->name('logout');
     });
 // Define the login route
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
