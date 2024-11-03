@@ -20,7 +20,7 @@
             <p class="text-lg">Discover a wealth of knowledge through our diverse range of blog posts</p>
         </div>
         <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" id="profileDropdown"
+            {{-- <button class="btn btn-primary dropdown-toggle" type="button" id="profileDropdown"
                 data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fas fa-user"></i>
             </button>
@@ -32,7 +32,7 @@
                     </form>
                     <a class="dropdown-item" href="#"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                </li>
+                </li> --}}
         </div>
     </header>
 
@@ -48,7 +48,7 @@
                     <h3 class="text-2xl font-semibold mb-2">{{ $posts->title }}</h3>
                     <p class="text-gray-300 mb-4">{{ $posts->description }}</p>
                     <img src="{{ asset('storage/' . $posts->image_path) }}" class="img-fluid" alt="...">
-                    <a href="{{ route('blogs.show', ['blog' => 1]) }}"
+                    <a href="{{ route('blogs.show', ['blog' => $posts['id']]) }}"
                         class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Read
                         More</a>
                 </div>
