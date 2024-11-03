@@ -18,20 +18,21 @@
         <p class="text-gray-400 leading-relaxed mb-6 text-center">Check out our latest blog posts below!</p>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            @foreach($blogs as $blog)
+            @foreach($blog as $blogs)
                 <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <h3 class="text-xl font-semibold mb-2">{{ $blog['title'] }}</h3>
-                    <p class="text-gray-300 mb-4">{{ $blog['summary'] }}</p>
-                    <a href="{{ route('blogs.show', ['blog' => $blog['id']]) }}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Read More</a>
+                    <h3 class="text-xl font-semibold mb-2">{{ $blogs->title }}</h3>
+                    <p class="text-gray-300 mb-4">{{ $blogs->title }}</p>
+                    <img src="{{ Storage::url('/' . $blogs->image_path) }}" alt="Image">
+                    <a href="{{ route('blogs.show', ['blog' => $blogs['id']]) }}" class="inline-block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition duration-300">Read More</a>
                 </div>
             @endforeach
         </div>
 
-        <div class="flex justify-center mt-8">
+        {{-- <div class="flex justify-center mt-8">
             <a href="{{ route('blogs.create') }}" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300 text-lg font-semibold">
                 Create New Blog
             </a>
-        </div>
+        </div> --}}
     </main>
     
     <footer class="bg-gray-800 text-white text-center p-4 mt-6">
