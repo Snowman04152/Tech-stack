@@ -12,7 +12,7 @@ Route::get('/', [PageController::class, 'homepage'])->name('homepage');
 // Grouping the authentication routes
 Route::name('auth.')
     ->group(function () {
-        Route::post('/logout', \Filament\Http\Controllers\Auth\LogoutController::class)->name('logout');
+        Route::post('/logout', LogoutController::class)->name('logout');
     });
 // Define the login route
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -30,5 +30,5 @@ Route::prefix('blogs')->group(function () {
     Route::get('/', [BlogController::class, 'index'])->name('blogs.index');
     Route::get('/create', [BlogController::class, 'create'])->name('blogs.create');
     Route::post('/', [BlogController::class, 'store'])->name('blogs.store');
-    Route::get('/blogs/{blog}', [BlogController::class, 'show'])->name('blogs.show');
+    Route::get('/{blog}', [BlogController::class, 'show'])->name('blogs.show');
 });
